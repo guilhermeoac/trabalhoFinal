@@ -3,16 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { HttpClientModule } from '@angular/common/http';
+import { RankingComponent } from './ranking/ranking.component';
+import { RankingService } from './ranking.service';
+import { TableModule } from 'primeng/table';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RankingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    TableModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RankingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
