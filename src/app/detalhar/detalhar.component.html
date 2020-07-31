@@ -1,0 +1,39 @@
+<div *ngIf="tipo && value != null">
+    <h1>Estados</h1>
+<div>
+    <span> Estado: {{value.state}}</span>
+</div>
+<div>
+    <span> Casos: {{value.cases}}</span>
+</div>
+<div>
+    <span> Mortes: {{value.deaths}}</span>
+</div>
+<div>
+    <span> Suspeitos: {{value.suspects}}</span>
+</div>
+<div>
+    <span> Atualizado em: {{value.datetime | date: 'medium'}}</span>
+</div>
+</div>
+<div *ngIf="!tipo && value != null">
+    <h1>Países</h1>
+    <div>
+        <span> País: {{value.data.country}}</span>
+    </div>
+    <div>
+        <span> Casos: {{value.data.cases}}</span>
+    </div>
+    <div>
+        <span> Confirmados: {{value.data.confirmed}}</span>
+    </div>
+    <div>
+        <span> Mortes: {{value.data.deaths}}</span>
+    </div>
+    <div>
+        <span> Suspeitos: {{value.data.recovered}}</span>
+    </div>
+    <div>
+        <span> Atualizado em: {{value.data.updated_at | date: 'medium'}}</span>
+    </div>
+    </div>

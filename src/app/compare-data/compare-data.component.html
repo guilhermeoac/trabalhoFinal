@@ -1,0 +1,51 @@
+<form ngForm="filterForm" (ngSubmit)="search()">
+    <p-calendar name="filtro1" [(ngModel)]="filtro1" [locale]="br" required></p-calendar>
+    <p-calendar name="filtro2" [(ngModel)]="filtro2" [locale]="br" required></p-calendar>
+    <button class="button" type="submit">Pesquisar</button>
+ </form>
+ <div *ngIf="data1 != null && data2 != null">
+    <div *ngIf="data1.length != 0">
+       <h3>
+       Dados de: {{data1[0].datetime | date: 'medium'}}</h3>
+       <div>
+          <span> Estado: {{data1[0].state}}</span>
+       </div>
+       <div>
+          <span> Casos: {{data1[0].cases}}</span>
+       </div>
+       <div>
+          <span> Mortes: {{data1[0].deaths}}</span>
+       </div>
+       <div>
+          <span> Suspeitos: {{data1[0].suspects}}</span>
+       </div>
+       <div>
+          <span> Comentários de: {{data1[0].comments}}</span>
+       </div>
+    </div>
+    <div *ngIf="data1.length == 0">
+       <span> Dados Indisponíveis</span>
+    </div>
+    <div *ngIf="data2.length != 0">
+       <h3>
+       Dados de: {{data2[0].datetime | date: 'medium'}}</h3>
+       <div>
+          <span> Estado: {{data2[0].state}}</span>
+       </div>
+       <div>
+          <span> Casos: {{data2[0].cases}}</span>
+       </div>
+       <div>
+          <span> Mortes: {{data2[0].deaths}}</span>
+       </div>
+       <div>
+          <span> Suspeitos: {{data2[0].suspects}}</span>
+       </div>
+       <div>
+          <span> Comentários de: {{data2[0].comments}}</span>
+       </div>
+    </div>
+    <div *ngIf="data2.length == 0">
+       <span> Dados Indisponíveis</span>
+    </div>
+ </div>

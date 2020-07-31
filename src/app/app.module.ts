@@ -9,19 +9,36 @@ import { HttpClientModule } from '@angular/common/http';
 import { RankingComponent } from './ranking/ranking.component';
 import { RankingService } from './ranking.service';
 import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
+import { DetalharComponent } from './detalhar/detalhar.component';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { CommonModule } from '@angular/common';
+import { CompareDataComponent } from './compare-data/compare-data.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RankingComponent
+    RankingComponent,
+    DetalharComponent,
+    HomeComponent,
+    CompareDataComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     TableModule,
-    HttpClientModule
+    ButtonModule,
+    HttpClientModule,
+    CommonModule,
+    CalendarModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [RankingService],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
-<p-table [value]="value">
+
+
+<p-table [value]="value" selectionMode="single" (onRowSelect) = "selecionalinha()" [(selection)]="linhaSelecionada">
     <ng-template pTemplate="header">
         <tr>
             <th *ngIf="tipoRanking == 'pais'">País</th>
@@ -7,12 +9,12 @@
             <th>Mortes</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-value>
-        <tr>
-            <td *ngIf="tipoRanking == 'pais'">{{value.country}}</td>
-            <td *ngIf="tipoRanking == 'estado'">{{value.state}}</td>
-            <td>{{value.cases}}</td>
-            <td>{{value.deaths}}</td>
+    <ng-template pTemplate="body" let-rowData>
+        <tr [pSelectableRowDblClick]="rowData">
+            <td *ngIf="tipoRanking == 'pais'">{{rowData.country}}</td>
+            <td *ngIf="tipoRanking == 'estado'">{{rowData.state}}</td>
+            <td>{{rowData.cases}}</td>
+            <td>{{rowData.deaths}}</td>
         </tr>
     </ng-template>
 </p-table>
