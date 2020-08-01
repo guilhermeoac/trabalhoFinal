@@ -14,8 +14,9 @@
     color: antiquewhite;
 }
 .toolbar__button{   
-    --primary-color: burlywood;
-    --primary-color-text: gray;
+    color: white;
+    background-color: gray;
+    width: 30%;
 }
 .content {
     display: grid;

@@ -1,53 +1,58 @@
 <div class="toolbar">
-<form class="toolbar__title" ngForm="filterForm" (ngSubmit)="search()">
+   <div class="toolbar__title">
+      <span> Comparação por data em Minas Gerais</span>
+   </div>
+   <div  class="toolbar__title">
+<form ngForm="filterForm" (ngSubmit)="search()">
     <p-calendar name="filtro1" placeholder="Data Início" [(ngModel)]="filtro1" [locale]="br" required></p-calendar>
     <p-calendar name="filtro2" placeholder="Data Final" [(ngModel)]="filtro2" [locale]="br" required></p-calendar>
-    <button class="button" type="submit">Pesquisar</button>
+    <button class="toolbar__button" type="submit">Pesquisar</button>
  </form>
 </div>
- <div *ngIf="data1 != null && data2 != null">
+</div>
+ <div class="content" *ngIf="data1 != null && data2 != null">
     <div *ngIf="data1.length != 0">
-       <h3>
+       <h3 class="content__table">
        Dados de: {{data1[0].datetime | date: 'medium'}}</h3>
-       <div>
+       <div class="content__table">
           <span> Estado: {{data1[0].state}}</span>
        </div>
-       <div>
+       <div class="content__table">
           <span> Casos: {{data1[0].cases}}</span>
        </div>
-       <div>
+       <div class="content__table content__table-death">
           <span> Mortes: {{data1[0].deaths}}</span>
        </div>
-       <div>
+       <div class="content__table">
           <span> Suspeitos: {{data1[0].suspects}}</span>
        </div>
-       <div>
+       <div class="content__table">
           <span> Comentários de: {{data1[0].comments}}</span>
        </div>
     </div>
-    <div *ngIf="data1.length == 0">
-       <span> Dados Indisponíveis</span>
+    <div  class="content__table" *ngIf="data1.length == 0">
+       <span > Dados Indisponíveis</span>
     </div>
     <div *ngIf="data2.length != 0">
-       <h3>
+       <h3 class="content__table">
        Dados de: {{data2[0].datetime | date: 'medium'}}</h3>
-       <div>
+       <div class="content__table">
           <span> Estado: {{data2[0].state}}</span>
        </div>
-       <div>
+       <div class="content__table">
           <span> Casos: {{data2[0].cases}}</span>
        </div>
-       <div>
+       <div class="content__table content__table-death">
           <span> Mortes: {{data2[0].deaths}}</span>
        </div>
-       <div>
+       <div class="content__table">
           <span> Suspeitos: {{data2[0].suspects}}</span>
        </div>
-       <div>
+       <div class="content__table">
           <span> Comentários de: {{data2[0].comments}}</span>
        </div>
     </div>
-    <div *ngIf="data2.length == 0">
+    <div class="content__table" *ngIf="data2.length == 0">
        <span> Dados Indisponíveis</span>
     </div>
  </div>

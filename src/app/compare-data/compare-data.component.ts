@@ -17,7 +17,7 @@ export class CompareDataComponent implements OnInit {
     monthNamesShort: [ "Jan", "Fev", "Mar", "Abr", "Mai", "Jun","Jul", "Ago", "Set", "Out", "Nov", "Dez" ],
     today: 'Hoje',
     clear: 'Limpar',
-    dateFormat: 'yyymmdd',
+    dateFormat: 'dd/mm/yyyy',
     weekHeader: 'Wk'
 };
   data1:any[]=[];
