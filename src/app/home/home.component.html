@@ -1,9 +1,12 @@
 <div class="toolbar">
-    <button class="toolbar__button" (click) = "tipoRanking = 'pais'" >Mundo</button>
     <div class="toolbar__title">
         <span>Dados Covid-19</span>
     </div>
+    <div>
+    <button class="toolbar__button" (click) = "tipoRanking = 'pais'" >Mundo</button>
     <button class="toolbar__button"(click) = "tipoRanking = 'estado'" >Brasil</button>
+    <button class="toolbar__button" [routerLink]="'/comparar'" >Minas Gerais</button>
+    </div>
 </div>
 <div class="content">
     <app-ranking [tipoRanking] = "tipoRanking"></app-ranking>
