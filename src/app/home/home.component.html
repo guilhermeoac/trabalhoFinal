@@ -1,7 +1,10 @@
-<div>
-    <p-button label="Mundo" (click) = "tipoRanking = 'pais'" ></p-button>
-    <p-button label="Brasil" (click) = "tipoRanking = 'estado'" ></p-button>
+<div class="toolbar">
+    <p-button class="toolbar__button" label="Mundo" (click) = "tipoRanking = 'pais'" ></p-button>
+    <div class="toolbar__title">
+        <span>Dados Covid-19</span>
+    </div>
+    <p-button class="toolbar__button" label="Brasil" (click) = "tipoRanking = 'estado'" ></p-button>
 </div>
-<div>
+<div class="content">
     <app-ranking [tipoRanking] = "tipoRanking"></app-ranking>
 </div>

@@ -1,39 +1,43 @@
 <div *ngIf="tipo && value != null">
-    <h1>Estados</h1>
-<div>
+    <h1 class="toolbar toolbar__title">Visualizar Estado</h1>
+    <div class="content">
+<div class="content__table">
     <span> Estado: {{value.state}}</span>
 </div>
-<div>
+<div class="content__table">
     <span> Casos: {{value.cases}}</span>
 </div>
-<div>
+<div class="content__table content__table-death">
     <span> Mortes: {{value.deaths}}</span>
 </div>
-<div>
+<div class="content__table">
     <span> Suspeitos: {{value.suspects}}</span>
 </div>
-<div>
+<div class="content__table">
     <span> Atualizado em: {{value.datetime | date: 'medium'}}</span>
 </div>
 </div>
+</div>
 <div *ngIf="!tipo && value != null">
-    <h1>Países</h1>
-    <div>
+    <h1 class="toolbar toolbar__title">Visualizar País</h1>
+    <div class="content">
+    <div class="content__table">
         <span> País: {{value.data.country}}</span>
     </div>
-    <div>
+    <div class="content__table">
         <span> Casos: {{value.data.cases}}</span>
     </div>
-    <div>
+    <div class="content__table">
         <span> Confirmados: {{value.data.confirmed}}</span>
     </div>
-    <div>
+    <div class="content__table content__table-death">
         <span> Mortes: {{value.data.deaths}}</span>
     </div>
-    <div>
+    <div class="content__table">
         <span> Suspeitos: {{value.data.recovered}}</span>
     </div>
-    <div>
+    <div class="content__table">
         <span> Atualizado em: {{value.data.updated_at | date: 'medium'}}</span>
     </div>
+</div>
     </div>

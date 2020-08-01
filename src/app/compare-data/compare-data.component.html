@@ -1,8 +1,10 @@
-<form ngForm="filterForm" (ngSubmit)="search()">
-    <p-calendar name="filtro1" [(ngModel)]="filtro1" [locale]="br" required></p-calendar>
-    <p-calendar name="filtro2" [(ngModel)]="filtro2" [locale]="br" required></p-calendar>
+<div class="toolbar">
+<form class="toolbar__title" ngForm="filterForm" (ngSubmit)="search()">
+    <p-calendar name="filtro1" placeholder="Data Início" [(ngModel)]="filtro1" [locale]="br" required></p-calendar>
+    <p-calendar name="filtro2" placeholder="Data Final" [(ngModel)]="filtro2" [locale]="br" required></p-calendar>
     <button class="button" type="submit">Pesquisar</button>
  </form>
+</div>
  <div *ngIf="data1 != null && data2 != null">
     <div *ngIf="data1.length != 0">
        <h3>
